@@ -8,7 +8,7 @@
 <link rel="shortcut icon" href="favicon.ico" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="renderer" content="webkit">
-    <title>登陆界面</title>
+    <title>注册 界面!</title>
     <style>
         html {
             background-color: #B5DEF2;
@@ -88,16 +88,17 @@
         
         .loginBox a.forgetLink {
             color: #ABABAB;
+            border: 1px solid #B7D4EA;
             cursor: pointer;
             float: right;
-            font: 11px/20px Arial;
+            font: 15px/20px Arial;
             text-decoration: none;
             vertical-align: middle;
             /*忘记密码*/
         }
         
         .loginBox a.forgetLink:HOVER {
-            color: #000000;
+            color: #B7D4EA;
             text-decoration: none;
             /*忘记密码*/
         }
@@ -128,11 +129,19 @@
             padding: 10px 50px;
         }
     </style>
+        <script>
+        var tishi = function(){
+swal("请确认并记住账号密码！", {
+    buttons: ["取消", "确定"],
+});
+        }
+    </script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
  
 <body>
     <div class="wrapper">
-        <form action="http://vv.iisfu.top:91/telecom/login.php" method="post">
+        <form action="http://vv.iisfu.top:91/telecom/register.php" method="post">
             <div class="loginBox">
             <p class = 'log'>爱云，云助手！</p>
             <hr>
@@ -140,18 +149,17 @@
                     <p><label for="username">用户名：</label></p>
                     <!--autofocus 规定当页面加载时按钮应当自动地获得焦点。 -->
                     <!-- placeholder提供可描述输入字段预期值的提示信息-->
-                    <p><input type="text" id="text" name="username" class="loginInput" autofocus="autofocus" required="required" autocomplete="off" placeholder="" value="" /></p>
+                    <p><input type="text" id="text" name="username" class="loginInput" autofocus="autofocus" required="required" autocomplete="off" placeholder="请输入账号" value="" /></p>
                     <!-- required 规定必需在提交之前填写输入字段-->
                     <p><label for="password">密码：</label></p>
-                    <p><input type="password" id="password" name="password" class="loginInput"  placeholder="" value="" /></p>
-                    <p><a class="forgetLink" href="./register.html">没有账号？注册！</a></p>
-                    <input id="remember" type="checkbox" name="remember" />
-                    <label for="remember">记住登录状态</label>
+                    <p><input type="password" id="password" name="password" class="loginInput"  placeholder="请输入密码" value="" /></p>
+                    <p><a class="forgetLink" href="./">已有账号，返回登录</a></p>
+
                 </div>
                 <div class="loginBoxButtons">
  
  
-                    <button class="loginBtn" name="login">登录</button>
+                    <button class="loginBtn" name="login">注册</button>
                     <input class='login' type="reset" value=" 清除" />
                 </div>
             </div>
